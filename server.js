@@ -1,10 +1,9 @@
 const express = require("express");
 const app = express();
-const { backendPort } = require("./conf");
+const { db, backendPort } = require("./conf");
 
-app.use("/", (req, res) => {
-  res.send("Welcome, stranger!");
-});
+app.use(express.json());
+app.use("/capsules", require("./routes/capsules"));
 
 app.listen(backendPort, () => {
   console.log(`API root available on http://localhost:${backendPort}`);
