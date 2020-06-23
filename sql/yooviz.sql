@@ -38,10 +38,8 @@ user
 (100) NULL, 
     `firstname`varchar
 (100) NULL, 
-    `email`nvarchar
-(255) CHARACTER
-SET utf8
-COLLATE utf8_general_ci NOT NULL, 
+    `email`varchar
+(255) NOT NULL, 
     `sex`tinyint NOT NULL, 
     `birthday`date NOT NULL,
     PRIMARY KEY
@@ -51,10 +49,8 @@ capsule
 (`id`int NOT NULL AUTO_INCREMENT,`capsule_name` varchar
 (100) NOT NULL,
 `description`TEXT NOT NULL,
-`duration_video` INT,`id_poi` INT NOT NULL,`id_user` INT NOT NULL,`link` TEXT NULL,`url_video` nvarchar
-(300) CHARACTER
-SET utf8
-COLLATE utf8_general_ci  NOT NULL, PRIMARY KEY
+`duration_video` INT,`id_poi` INT NOT NULL,`id_user` INT NOT NULL,`link` TEXT NULL,`url_video` varchar
+(300) NOT NULL, PRIMARY KEY
 (`id`));
 
 ALTER TABLE capsule ADD CONSTRAINT fk_id_poi FOREIGN KEY (id_poi) REFERENCES poi(id);
