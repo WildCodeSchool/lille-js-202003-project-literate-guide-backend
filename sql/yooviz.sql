@@ -5,25 +5,25 @@
 */
 
 CREATE DATABASE yooviz;
-CREATE TABLE tag('id'int NOT NULL AUTO_INCREMENT,'label'varchar
-(100) NOT NULL, 'category'varchar
+CREATE TABLE tag('id' int NOT NULL AUTO_INCREMENT,'label' varchar
+(100) NOT NULL, 'category' varchar
 (100) NOT NULL,  PRIMARY KEY
 (`id`)),
 
 poi
 (
     'id' int NOT NULL AUTO_INCREMENT,
-    'poi_name'varchar
+    'poi_name' varchar
 (100) NOT NULL,
-    'adress'VARCHAR
+    'adress' VARCHAR
 (100) NULL,
-    'latitude'FLOAT NOT NULL,
-    'longitude'FLOAT NOT NULL,
-    'poi_tag_id' INT NULL,
+    'latitude' FLOAT NOT NULL,
+    'longitude' FLOAT NOT NULL,
+    'id_poi_tag' INT NULL,
     PRIMARY KEY
 (`id`)), 
 
-user_account
+user
 (
     'id' int NOT NULL AUTO_INCREMENT,
     'user_name'varchar
@@ -57,3 +57,6 @@ SET utf8
 COLLATE utf8_general_ci  NOT NULL, PRIMARY KEY
 (`id`));
 
+ALTER TABLE capsule ADD CONSTRAINT fk_id_poi FOREIGN KEY (id_poi) REFERENCES poi(id);
+ALTER TABLE capsule ADD CONSTRAINT fk_id_user FOREIGN KEY (id_user) REFERENCES user(id);
+ALTER TABLE poi ADD CONSTRAINT fk_id_poi_tag FOREIGN KEY (id_poi_tag) REFERENCES tag(id);
