@@ -1,4 +1,12 @@
+const mysql = require("mysql");
 require("dotenv").config();
-module.exports = {
-  backendPort: process.env.BACKEND_PORT || "4242",
-};
+const { DB_HOST, DB_USER, DB_DATABASE, DB_PASSWORD } = process.env;
+
+const db = mysql.createConnection({
+  host: DB_HOST, // adresse du serveur
+  user: DB_USER, // le nom d'utilisateur
+  password: DB_PASSWORD, // le mot de passe
+  database: DB_DATABASE, // le nom de la base de données
+});
+
+module.exports = { db, backendPort: process.env.BACKEND_PORT };
