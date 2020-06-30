@@ -10,7 +10,8 @@ CREATE TABLE tag
     `id` INT NOT NULL AUTO_INCREMENT,
     `label` varchar(100) NOT NULL, 
     `category`varchar(100) NOT NULL,  
-    PRIMARY KEY (`id`)),
+    PRIMARY KEY (`id`)
+    ),
 
 poi
 (
@@ -28,7 +29,7 @@ user
     `id` int NOT NULL AUTO_INCREMENT,
     `user_name`varchar(45) NOT NULL, 
     `password`varchar(100) NOT NULL, 
-    `type_user`varchar(30) DEFAULT `tourist` NOT NULL,
+    `type_user`varchar(30) DEFAULT 'tourist' NOT NULL,
     `type_account`varchar(100) NULL,
     `lastname`varchar(100) NULL, 
     `firstname`varchar(100) NULL, 
