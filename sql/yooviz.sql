@@ -60,6 +60,30 @@ rating
     `id_capsule_rating` int NOT NULL,
     `id_user_rating` int NOT NULL,
     PRIMARY KEY (`id`)
+    ),
+
+course
+(
+    `id`int NOT NULL AUTO_INCREMENT,
+    `course_name` varchar(100) NOT NULL,
+    `course_description`text NOT NULL,
+    `course_teaser` varchar(300) NOT NULL,
+    `id_user_course` int NOT NULL,
+    PRIMARY KEY (`id`)
+    ),
+
+capsule_tag
+(
+    `id`int NOT NULL AUTO_INCREMENT,
+    `id_cap_tag_capsule` int NOT NULL,
+    `id_cap_tag_tag` int NOT NULL,
+    ),
+
+course_tag
+(
+    `id`int NOT NULL AUTO_INCREMENT,
+    `id_course_tag_course` int NOT NULL,
+    `id_course_tag_tag` int NOT NULL,
     )
 );
 
