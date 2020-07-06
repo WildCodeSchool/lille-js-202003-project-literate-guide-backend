@@ -68,6 +68,7 @@ course
     `course_name` varchar(100) NOT NULL,
     `course_description`text NOT NULL,
     `course_teaser` varchar(300) NOT NULL,
+    `price` FLOAT NULL,
     `id_user_course` int NOT NULL,
     PRIMARY KEY (`id`)
     ),
@@ -111,3 +112,28 @@ ALTER TABLE rating ADD
 CONSTRAINT fk_id_user_rating
 FOREIGN KEY (id_user_rating) 
 REFERENCES user(id);
+
+ALTER TABLE course ADD 
+CONSTRAINT fk_id_user_course
+FOREIGN KEY (id_user_course) 
+REFERENCES user(id);
+
+ALTER TABLE capsule_tag ADD 
+CONSTRAINT fk_id_cap_tag_capsule
+FOREIGN KEY (id_cap_tag_capsule) 
+REFERENCES capsule(id);
+
+ALTER TABLE capsule_tag ADD 
+CONSTRAINT fk_id_cap_tag_tag
+FOREIGN KEY (id_cap_tag_tag) 
+REFERENCES tag(id);
+
+ALTER TABLE course_tag ADD 
+CONSTRAINT fk_id_course_tag_course
+FOREIGN KEY (id_course_tag_course) 
+REFERENCES course(id);
+
+ALTER TABLE course_tag ADD 
+CONSTRAINT fk_id_course_tag_tag
+FOREIGN KEY (id_course_tag_tag) 
+REFERENCES tag(id);
