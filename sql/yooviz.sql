@@ -10,7 +10,8 @@ CREATE TABLE tag
     `id` INT NOT NULL AUTO_INCREMENT,
     `label` varchar(100) NOT NULL, 
     `category`varchar(100) NOT NULL,  
-    PRIMARY KEY (`id`)),
+    PRIMARY KEY (`id`)
+    ),
 
 poi
 (
@@ -28,7 +29,7 @@ user
     `id` int NOT NULL AUTO_INCREMENT,
     `user_name`varchar(45) NOT NULL, 
     `password`varchar(100) NOT NULL, 
-    `type_user`varchar(30) DEFAULT `tourist` NOT NULL,
+    `type_user`varchar(30) DEFAULT 'tourist' NOT NULL,
     `type_account`varchar(100) NULL,
     `lastname`varchar(100) NULL, 
     `firstname`varchar(100) NULL, 
@@ -42,14 +43,25 @@ capsule
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `capsule_name` varchar(100) NOT NULL,
-    `description`TEXT NOT NULL,
-    `duration_video` INT,
-    `id_poi` INT NOT NULL,
-    `id_user` INT NOT NULL,
-    `link` TEXT NULL,
+    `description`text NOT NULL,
+    `duration_video` int NOT NULL,
+    `id_poi` int NOT NULL,
+    `id_user` int NOT NULL,
+    `link` text NULL,
     `url_video` varchar(300) NOT NULL, 
     PRIMARY KEY (`id`)
-    );
+    ),
+
+rating
+(
+    `id`int NOT NULL AUTO_INCREMENT,
+    `comment` text NULL,
+    `score` int NOT NULL,
+    `id_capsule_rating` int NOT NULL,
+    `id_user_rating` int NOT NULL,
+    PRIMARY KEY (`id`)
+    )
+);
 
 ALTER TABLE capsule ADD 
 CONSTRAINT fk_id_poi 
@@ -65,3 +77,13 @@ ALTER TABLE poi ADD
 CONSTRAINT fk_id_poi_tag 
 FOREIGN KEY (id_poi_tag) 
 REFERENCES tag(id);
+
+ALTER TABLE rating ADD 
+CONSTRAINT fk_id_capsule_rating
+FOREIGN KEY (id_capsule_rating) 
+REFERENCES capsule(id);
+
+ALTER TABLE rating ADD 
+CONSTRAINT fk_id_user_rating
+FOREIGN KEY (id_user_rating) 
+REFERENCES user(id);

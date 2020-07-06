@@ -1,17 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { db } = require("../conf");
 
-router.get("/", (req, res) => {
-  db.query("SELECT capsule_name, description FROM capsule", (err, results) => {
-    if (err) {
-      res.status(500).send("non");
-      console.log(err.sql);
-      console.log(err.message);
-    } else {
-      res.send(results);
-    }
-  });
-});
+const capsulesController = require("../controllers/capsules");
+
+// Get some infos from all capsules
+router.get("/test", capsulesController.getSimpleCapsules);
+
+//Get all infos from all capsules with their poi
+router.get("/", capsulesController.getCapsules);
 
 module.exports = router;
