@@ -1,5 +1,5 @@
 INSERT INTO course_step
-    (`id_course_course_step`, `id_poi_course_step`)
+    (`id_course_course_step`, `id_poi_course_step`, `id_capsule_course_step`)
 VALUES
     ('1', '2', '2'),
     ('1', '3', '4'),
