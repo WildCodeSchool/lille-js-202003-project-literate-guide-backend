@@ -73,18 +73,26 @@ course
     PRIMARY KEY (`id`)
     ),
 
+course_step
+(
+    `id`int NOT NULL AUTO_INCREMENT,
+    `id_course_course_step` int NOT NULL,
+    `id_poi_course_step` int NOT NULL,
+    `id_capsule_course_step` int NOT NULL
+    ),
+
 capsule_tag
 (
     `id`int NOT NULL AUTO_INCREMENT,
-    `id_cap_tag_capsule` int NOT NULL,
-    `id_cap_tag_tag` int NOT NULL,
+    `id_capsule_cap_tag` int NOT NULL,
+    `id_tag_cap_tag` int NOT NULL
     ),
 
 course_tag
 (
     `id`int NOT NULL AUTO_INCREMENT,
-    `id_course_tag_course` int NOT NULL,
-    `id_course_tag_tag` int NOT NULL,
+    `id_course_course_tag` int NOT NULL,
+    `id_tag_course_tag` int NOT NULL
     )
 );
 
@@ -118,22 +126,37 @@ CONSTRAINT fk_id_user_course
 FOREIGN KEY (id_user_course) 
 REFERENCES user(id);
 
-ALTER TABLE capsule_tag ADD 
-CONSTRAINT fk_id_cap_tag_capsule
-FOREIGN KEY (id_cap_tag_capsule) 
+ALTER TABLE course_step ADD 
+CONSTRAINT fk_id_course_course_step
+FOREIGN KEY (id_course_course_step) 
+REFERENCES course(id);
+
+ALTER TABLE course_step ADD 
+CONSTRAINT fk_id_poi_course_step
+FOREIGN KEY (id_poi_course_step) 
+REFERENCES poi(id);
+
+ALTER TABLE course_step ADD 
+CONSTRAINT fk_id_capsule_course_step
+FOREIGN KEY (id_capsule_course_step) 
 REFERENCES capsule(id);
 
 ALTER TABLE capsule_tag ADD 
-CONSTRAINT fk_id_cap_tag_tag
-FOREIGN KEY (id_cap_tag_tag) 
+CONSTRAINT fk_id_capsule_cap_tag
+FOREIGN KEY (id_capsule_cap_tag) 
+REFERENCES capsule(id);
+
+ALTER TABLE capsule_tag ADD 
+CONSTRAINT fk_id_tag_cap_tag
+FOREIGN KEY (id_tag_cap_tag) 
 REFERENCES tag(id);
 
 ALTER TABLE course_tag ADD 
-CONSTRAINT fk_id_course_tag_course
-FOREIGN KEY (id_course_tag_course) 
+CONSTRAINT fk_id_course_course_tag
+FOREIGN KEY (id_course_course_tag) 
 REFERENCES course(id);
 
 ALTER TABLE course_tag ADD 
-CONSTRAINT fk_id_course_tag_tag
-FOREIGN KEY (id_course_tag_tag) 
+CONSTRAINT fk_id_tag_course_tag
+FOREIGN KEY (id_tag_course_tag) 
 REFERENCES tag(id);

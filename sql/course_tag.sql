@@ -1,5 +1,5 @@
 INSERT INTO course_tag
-    (`id_course_tag_course`, `id_course_tag_tag`)
+    (`id_course_course_tag`, `id_tag_course_tag`)
 VALUES
     ('1', '24'),
     ('1', '14'),

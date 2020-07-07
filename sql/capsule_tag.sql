@@ -1,5 +1,5 @@
 INSERT INTO capsule_tag
-    (`id_cap_tag_capsule`, `id_cap_tag_tag`)
+    (`id_capsule_cap_tag`, `id_tag_cap_tag`)
 VALUES
     ('1', '24'),
     ('1', '11'),
