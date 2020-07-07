@@ -3,12 +3,14 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 const capsules = require("./routes/capsules");
+const poi = require("./routes/poi");
 const { backendPort } = require("./conf");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/capsules", capsules);
+app.use("/poi", poi);
 
 app.listen(backendPort, (err) => {
   if (err) {
