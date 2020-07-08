@@ -78,21 +78,24 @@ course_step
     `id`int NOT NULL AUTO_INCREMENT,
     `id_course_course_step` int NOT NULL,
     `id_poi_course_step` int NOT NULL,
-    `id_capsule_course_step` int NOT NULL
+    `id_capsule_course_step` int NOT NULL,
+    PRIMARY KEY (`id`)
     ),
 
 capsule_tag
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `id_capsule_cap_tag` int NOT NULL,
-    `id_tag_cap_tag` int NOT NULL
+    `id_tag_cap_tag` int NOT NULL,
+    PRIMARY KEY (`id`)
     ),
 
 course_tag
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `id_course_course_tag` int NOT NULL,
-    `id_tag_course_tag` int NOT NULL
+    `id_tag_course_tag` int NOT NULL,
+    PRIMARY KEY (`id`)
     )
 );
 
