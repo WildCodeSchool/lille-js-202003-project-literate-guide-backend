@@ -5,6 +5,7 @@
 */
 
 CREATE DATABASE yooviz;
+USE yooviz;
 CREATE TABLE tag 
 (
     `id` INT NOT NULL AUTO_INCREMENT,
