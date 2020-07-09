@@ -28,7 +28,7 @@ VALUES
     ('25', 'langue', 'Anglais');
 
 INSERT INTO poi
-    (`id`,`poi_name`,`adress`,`latitude`,`longitude`, `id_poi_tag`)
+    (`id`,`poi_name`,`address`,`latitude`,`longitude`, `id_poi_tag`)
 VALUES
     ('1', 'Les fusillés lillois', 'Les fusillés lillois, Square Daubenton, 59800 Lille', '50.6379', '3.05166', '5'),
     ('2', 'La place du Théâtre', 'Boulevard Carnot 59800 Lille', '50.637721', '3.064476', '2'),
