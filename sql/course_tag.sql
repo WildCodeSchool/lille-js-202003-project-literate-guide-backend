@@ -1,3 +1,5 @@
+/*9*/
+
 INSERT INTO course_tag
     (`id_course_course_tag`, `id_tag_course_tag`)
 VALUES

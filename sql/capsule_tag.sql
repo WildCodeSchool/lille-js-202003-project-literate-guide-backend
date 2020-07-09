@@ -1,3 +1,5 @@
+/*8*/
+
 INSERT INTO capsule_tag
     (`id_capsule_cap_tag`, `id_tag_cap_tag`)
 VALUES

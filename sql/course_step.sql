@@ -1,3 +1,5 @@
+/*7*/
+
 INSERT INTO course_step
     (`id_course_course_step`, `id_poi_course_step`, `id_capsule_course_step`)
 VALUES

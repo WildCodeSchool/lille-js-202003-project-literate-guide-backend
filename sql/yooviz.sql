@@ -11,20 +11,20 @@ CREATE TABLE tag
     `label` varchar(100) NOT NULL, 
     `category`varchar(100) NOT NULL,  
     PRIMARY KEY (`id`)
-    ),
+);
 
-poi
+CREATE TABLE poi
 (
     `id` int NOT NULL AUTO_INCREMENT,
     `poi_name` varchar(100) NOT NULL,
-    `adress` VARCHAR(100) NULL,
+    `address` VARCHAR(100) NULL,
     `latitude` FLOAT NOT NULL,
     `longitude` FLOAT NOT NULL,
     `id_poi_tag` INT NULL,
     PRIMARY KEY (`id`)
-    ), 
+);
 
-user
+CREATE TABLE user
 (
     `id` int NOT NULL AUTO_INCREMENT,
     `user_name`varchar(45) NOT NULL, 
@@ -37,9 +37,9 @@ user
     `sex`tinyint NOT NULL, 
     `birthday`date NOT NULL,
     PRIMARY KEY(`id`)
-    ), 
+);
 
-capsule
+CREATE TABLE capsule
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `capsule_name` varchar(100) NOT NULL,
@@ -50,9 +50,9 @@ capsule
     `link` text NULL,
     `url_video` varchar(300) NOT NULL, 
     PRIMARY KEY (`id`)
-    ),
+);
 
-rating
+CREATE TABLE rating
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `comment` text NULL,
@@ -60,9 +60,9 @@ rating
     `id_capsule_rating` int NOT NULL,
     `id_user_rating` int NOT NULL,
     PRIMARY KEY (`id`)
-    ),
+);
 
-course
+CREATE TABLE course
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `course_name` varchar(100) NOT NULL,
@@ -71,32 +71,31 @@ course
     `price` FLOAT NULL,
     `id_user_course` int NOT NULL,
     PRIMARY KEY (`id`)
-    ),
+);
 
-course_step
+CREATE TABLE course_step
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `id_course_course_step` int NOT NULL,
     `id_poi_course_step` int NOT NULL,
     `id_capsule_course_step` int NOT NULL,
     PRIMARY KEY (`id`)
-    ),
+);
 
-capsule_tag
+CREATE TABLE capsule_tag
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `id_capsule_cap_tag` int NOT NULL,
     `id_tag_cap_tag` int NOT NULL,
     PRIMARY KEY (`id`)
-    ),
+);
 
-course_tag
+CREATE TABLE course_tag
 (
     `id`int NOT NULL AUTO_INCREMENT,
     `id_course_course_tag` int NOT NULL,
     `id_tag_course_tag` int NOT NULL,
     PRIMARY KEY (`id`)
-    )
 );
 
 ALTER TABLE capsule ADD 

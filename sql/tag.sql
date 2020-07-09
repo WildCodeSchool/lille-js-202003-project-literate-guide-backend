@@ -1,3 +1,5 @@
+/*1*/
+
 INSERT into tag
     (`id`, `category`, `label`)
 VALUES

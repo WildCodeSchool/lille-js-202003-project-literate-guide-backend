@@ -1,3 +1,5 @@
+/*6*/
+
 INSERT INTO course
     (`course_name`, `course_description`, `course_teaser`, `price`, `id_user_course`)
 VALUES

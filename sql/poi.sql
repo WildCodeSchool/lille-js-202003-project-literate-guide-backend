@@ -1,3 +1,5 @@
+/*2*/
+
 /*
 -- Query: SELECT * FROM yooviz_db.poi
 LIMIT 0, 1000

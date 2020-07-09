@@ -1,3 +1,5 @@
+/*5*/
+
 INSERT INTO rating
     (`comment`,`score`, `id_capsule_rating`, `id_user_rating`)
 VALUES
