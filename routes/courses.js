@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const parcoursController = require("../controllers/parcours");
+const coursesController = require("../controllers/courses");
 
 //Get all infos from all courses, including creator, poi, capsules and tags
-router.get("/", parcoursController.getParcours);
+router.get("/", coursesController.getCourses);
 
 module.exports = router;
