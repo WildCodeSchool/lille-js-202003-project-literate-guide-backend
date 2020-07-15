@@ -24,4 +24,18 @@ const getCapsules = async (req, res) => {
   }
 };
 
-module.exports = { getSimpleCapsules, getCapsules };
+const getOneCapsuleRatings = async (req, res) => {
+  try {
+    const idCaps = req.params.id;
+    const rating = await db.query(
+      "SELECT r.id rating_id, comment, score, u.id user_id, user_name, cap.id capsule_id, capsule_name FROM rating r JOIN user u ON u.id = r.id_user_rating JOIN capsule cap ON cap.id = r.id_capsule_rating WHERE id_capsule_rating = ?",
+      [idCaps]
+    );
+    return res.status(200).json(rating[0]);
+  } catch (e) {
+    console.log(e);
+    return res.status(500).send("Erreur lors de la lecture des notes");
+  }
+};
+
+module.exports = { getSimpleCapsules, getCapsules, getOneCapsuleRatings };
