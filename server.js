@@ -5,6 +5,7 @@ const app = express();
 const capsules = require("./routes/capsules");
 const courses = require("./routes/courses");
 const poi = require("./routes/poi");
+const tags = require("./routes/tags");
 const { backendPort } = require("./conf");
 
 app.use(express.json());
@@ -13,6 +14,7 @@ app.use(cors());
 app.use("/capsules", capsules);
 app.use("/courses", courses);
 app.use("/poi", poi);
+app.use("/tags", tags);
 
 app.listen(backendPort, (err) => {
   if (err) {
